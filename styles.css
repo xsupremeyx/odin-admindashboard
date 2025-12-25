@@ -1,7 +1,21 @@
-:root , body, html{
+body, html{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+}
+
+:root{
+    --main-color1: white;
+    --main-color2: lightgray;
+    --side-color1: rgb(6, 111, 231);
+    --side-color2: orange;
+    --font-color1: black;
+    --font-color2: darkgray;
+    --font-size-small: 18px;
+    --font-size-smaller: 14px;
+    --font-size-medium: 24px;
+    --font-size-large: 32px;
+    --main-font: 'Roboto', sans-serif;
 }
 
 .container {
