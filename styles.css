@@ -274,23 +274,55 @@ html {
     display: grid;
     grid-auto-rows: 1fr;
     height: 100%;
+    width: 100%;;
 }
 
 
 /* TO DO: ANNOUNCEMENTS SECTION ROUND KRO ISE AND DESCRIPTION FONT SIZE, also fix the scrolling issue (make things smaller) */
 .an-card {
+    position: relative;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
     background-color: var(--main-color1);
-    padding-bottom: 15px;
-    border-bottom: 1px solid #d1d1d1;
+    /* border-bottom: 1px solid #d1d1d1; */
+    padding: 20px;
+    gap: 10px;
+}
+
+.an-card:first-child {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.an-card:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 .an-title{
     font-size: var(--font-size-smally);
     font-weight: bold;
+    text-align: left;
+}
+
+.an-content{
+    font-size: var(--font-size-smaller);
+    color: var(--font-color2);
+    text-align: left;
+}
+
+.an-card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    
+    left: 20px;
+    right: 20px;
+
+    height: 1px;
+    background-color: #d1d1d1;
 }
 
 .main-content>.trending{
