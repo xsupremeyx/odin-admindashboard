@@ -23,13 +23,12 @@ html {
     padding: 0px;
     box-sizing: border-box;
     height: 100%;
-    overflow: hidden;
 }
 
 .container {
     font-family: var(--main-font);
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 5fr;
     height: 100vh;
     width: 100vw;
@@ -56,13 +55,16 @@ html {
 .search-bar>.search-icon{
     height: 25px;
     width: 25px;
-    background-color: black;
 }
 
 .search-bar>input{
     height: 30px;
     width: 60%;
     background-color: var(--main-color2);
+    border: none;
+    border-radius: 15px;
+    padding-left: 15px;
+    font-size: var(--font-size-small);
 }
 
 .search-bar>.user{
@@ -75,34 +77,32 @@ html {
 .search-bar>.user>.notification-icon{
     height: 30px;
     width: 30px;
-    background-color: black;
 }
 
 .search-bar>.user>p{
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-medium);
     width: 50%;
+    font-weight: bolder;
 }
 
 .search-bar>.user>.user-img{
     height: 40px;
     width: 40px;
-    background-color: black;
     border-radius: 50%;
 }
 
 .header>.user-profile{
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    
+    gap: 20px;
+    padding-left: 35px;
 }
 
 .user-profile>.user-img-large{
     height: 70px;
     width: 70px;
-    background-color: black;
     border-radius: 50%;
 }
 .user-profile>.user-info {
@@ -111,10 +111,12 @@ html {
 
 .user-info>p{
     font-size: var(--font-size-small);
+    margin: 15px;
 }
 
 .user-info>.username{
     font-size: var(--font-size-medium);
+    font-weight: bold;
 }
 
 .header>.actions{
@@ -156,7 +158,7 @@ html {
 .sidebar>.icon>.logo-img{
     height: 50px;
     width: 50px;
-    background-color: black;
+    filter: invert(1);
 }
 
 .sidebar>.icon>p{
@@ -186,7 +188,7 @@ html {
 .menu>li>.img{
     height: 30px;
     width: 30px;
-    background-color: black;
+    filter: invert(1);
 }
 
 .main-content{
@@ -197,6 +199,7 @@ html {
     grid-template-columns: 3fr 1fr;
     grid-template-rows: auto 1fr;
     overflow: hidden;
+    min-height: 0;
 }
 
 .main-content>.projects{
@@ -261,7 +264,6 @@ html {
 .card-img{
     height: 30px;
     width: 30px;
-    background-color: black;
 }
 
 .main-content>.announcements{
@@ -270,15 +272,17 @@ html {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     padding: 25px;
+    
 }
 
 .announcement-container {
     display: grid;
     grid-auto-rows: 1fr;
-    height: 100%;
-    width: 100%;;
+    /* height: 100%;
+    width: 100%; */
     flex: 1;
     overflow: hidden;
+    overflow-y: auto;
 }
 
 .an-card {
@@ -287,7 +291,6 @@ html {
     display: flex;
     flex-direction: column;
     background-color: var(--main-color1);
-    /* border-bottom: 1px solid #d1d1d1; */
     padding: 20px;
     gap: 10px;
 }
@@ -324,7 +327,7 @@ html {
     right: 20px;
 
     height: 1px;
-    background-color: #d1d1d1;
+    background-color: var(--main-color2);
 }
 
 .main-content>.trending{
@@ -338,9 +341,63 @@ html {
 .trending-container {
     display: grid;
     grid-auto-rows: 1fr;
-    height: 100%;
+    overflow-y: auto;
 }
 
 .tr-card {
+    padding: 15px 35px;
+    display: flex;
     background-color: var(--main-color1);
+    gap: 25px;
+}
+
+.tr-card:first-child {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.tr-card:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.tr-img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.tr-content{
+    font-size: var(--font-size-small);
+}
+
+.tr-author{
+    color: var(--font-color1);
+}
+
+.tr-title{
+    color: var(--font-color2);
+}
+
+.card,
+.an-card,
+.tr-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.actions .user-profile{
+    position: relative;
+}
+
+.actions::after .user-profile::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+
+    height: 4px;
+    box-shadow: 0 20px 12px rgba(0, 0, 0, 15);
+    pointer-events: none;
 }
