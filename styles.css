@@ -80,7 +80,7 @@ html {
 }
 
 .search-bar>.user>p{
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-small);
     width: 50%;
     font-weight: bolder;
 }
@@ -197,9 +197,7 @@ html {
     grid-row: 2 / 3;
     background-color: var(--main-color2);
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: auto 1fr;
-    overflow: hidden;
-    min-height: 0;
+    grid-template-rows: 1fr 1fr;
 }
 
 .main-content>.projects{
@@ -281,8 +279,6 @@ html {
     /* height: 100%;
     width: 100%; */
     flex: 1;
-    overflow: hidden;
-    overflow-y: auto;
 }
 
 .an-card {
